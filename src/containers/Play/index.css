@@ -1,0 +1,63 @@
+
+.buttons {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 5vmin;
+  padding-right: 5vmin
+}
+
+.buttons__button {
+  background-color: #eee;
+  border: 0;
+  height: 10vmin;
+  padding-left: 5vmin;
+  padding-right: 5vmin;
+  outline: 0;
+  font: inherit;
+  font-size: 36px;
+  line-height: 1
+}
+
+.buttons__button svg {
+  height: 40px;
+  width: 40px;
+  vertical-align: text-bottom
+}
+
+.showing-overview .buttons__button--previous {
+  pointer-events: none;
+  opacity: 0
+}
+
+.not-started .buttons__button--next {
+  display: none
+}
+
+.showing-overview .buttons__button--next, .list-complete .buttons__button--next {
+  pointer-events: none;
+  opacity: 0
+}
+
+.buttons__button--start {
+  display: none
+}
+
+.not-started .buttons__button--start {
+  display: inline-block
+}
+
+.showing-overview .buttons__button--overview {
+  display: none
+}
+
+.buttons__button--resume {
+  display: none
+}
+
+.showing-overview:not(.not-started) .buttons__button--resume {
+  display: inline-block
+}

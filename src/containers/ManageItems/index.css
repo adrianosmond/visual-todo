@@ -1,0 +1,27 @@
+.manage-items {
+  /* padding: 20px; */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.manage-items__item {
+  position: relative;
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+  margin-left: 20px;
+  background-size: cover;
+}
+
+.manage-items__item-name {
+  position: absolute;
+  padding: 5px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+}

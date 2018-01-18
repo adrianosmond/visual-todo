@@ -1,0 +1,98 @@
+
+.item-form {
+  padding: 20px
+}
+
+.item-form__preview {
+  border: 1px solid #999
+}
+
+@media (min-width: 840px) {
+  .item-form__preview {
+    float: left
+  }
+}
+
+.item-form__controls {
+  padding-left: 20px;
+  width: calc(100vw - 542px)
+}
+
+@media (min-width: 840px) {
+  .item-form__controls {
+    float: left
+  }
+}
+
+.item-form__picture {
+  position: relative;
+  display: block;
+  height: 40px;
+  border: 1px solid #999;
+  cursor: pointer
+}
+
+.item-form__picture-input {
+  opacity: 0;
+  width: 100%;
+  height: 40px
+}
+
+.item-form__picture:before {
+  position: absolute;
+  top: 11px;
+  left: 11px;
+  content: "Choose picture..."
+}
+
+.item-form__picture-fake-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  max-width: 120px;
+  height: 38px;
+  background-color: #eee;
+  border-left: 1px solid #999;
+  line-height: 1
+}
+
+.item-form__picture-fake-button:after {
+  position: absolute;
+  top: 11px;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  content: "Browse"
+}
+
+.item-form__caption-label {
+  margin-top: 20px;
+  font-size: 16px
+}
+
+.item-form__name {
+  margin-top: 5px;
+  font: inherit;
+  border: 1px solid #999;
+  width: 100%;
+  padding: 10px
+}
+
+.item-form__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -20px;
+}
+
+.item-form__button {
+  font: inherit;
+  padding: 10px;
+  background-color: #EEE;
+  border: 1px solid #999;
+  margin-left: 20px;
+  margin-top: 20px;
+  min-width: 150px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
