@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { add, update, remove, load } from '../../actions/itemActions';
+import { add, update, remove, loadItems } from '../../actions/itemActions';
 import { database } from '../../lib/db.js';
 import './index.css';
 
@@ -31,7 +31,7 @@ class ItemForm extends Component {
             itemsArray.push(allItems[key]);
             itemsArray[itemsArray.length - 1].id=key;
           }
-          this.props.load(itemsArray);
+          this.props.loadItems(itemsArray);
           this.findItemAndPrefillForm();
         });
       }
@@ -192,7 +192,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    load: (items) => dispatch(load(items)),
+    loadItems: (items) => dispatch(loadItems(items)),
     add: (id, name, image) => dispatch(add(id, name, image)),
     remove: (id) => dispatch(remove(id)),
     update: (id, name, image) => dispatch(update(id, name, image))

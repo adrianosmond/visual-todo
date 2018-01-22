@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PlayList from '../../components/PlayList';
-import { prevItem, nextItem, overview, start, load } from '../../actions/playActions';
+import { loadItemsToPlay, prevItem, nextItem, overview, start, load } from '../../actions/playActions';
 import './index.css';
 
 class Play extends Component {
   componentDidMount() {
+    this.props.loadItemsToPlay();
     setTimeout(this.props.load, 100);
   }
 
@@ -69,6 +70,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     load: () => dispatch(load()),
+    loadItemsToPlay: (items) => dispatch(loadItemsToPlay(items)),
     start: (started) => dispatch(start(started)),
     overview: () => dispatch(overview()),
     nextItem: () => dispatch(nextItem()),

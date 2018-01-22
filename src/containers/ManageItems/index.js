@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { load, remove } from '../../actions/itemActions';
+import ItemTile from '../../components/ItemTile';
+import { loadItems, remove } from '../../actions/itemActions';
 import { database } from '../../lib/db.js';
 import './index.css';
 
@@ -15,21 +16,19 @@ class ManageItems extends Component {
         itemsArray.push(allItems[key]);
         itemsArray[itemsArray.length - 1].id=key;
       }
-      this.props.load(itemsArray);
+      this.props.loadItems(itemsArray);
     });
   }
 
   render () {
     return (
-      <div className="manage-items">
-        <Link className="manage-items__item" to="/items/add">Add an item</Link>
-        {this.props.items.length > 0 ? <Link className="manage-items__item" to="/items/manage-list">Make a new list from these items</Link> : null}
+      <div className="tile-grid">
+        <Link className="tile-grid__item" to="/items/add">Add an item</Link>
+        {this.props.items.length > 0 ? <Link className="tile-grid__item" to="/items/manage-list">Make a new list from these items</Link> : null}
         {this.props.items.map((item, idx) => {
           return (
-            <Link className="manage-items__item" to={`/items/edit/${item.id}`} key={item.id} style={{
-              backgroundImage: `url(${item.image})`
-            }}>
-              <span className="manage-items__item-name">{item.name}</span>
+            <Link to={`/items/edit/${item.id}`} key={item.id}>
+              <ItemTile item={item} />
             </Link>
           );
         })}
@@ -45,7 +44,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    load: (items) => dispatch(load(items)),
+    loadItems: (items) => dispatch(loadItems(items)),
     remove: (id) => dispatch(remove(id))
   }
 }

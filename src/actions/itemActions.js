@@ -23,7 +23,7 @@ export function remove (id) {
   }
 }
 
-export function load (items) {
+export function loadItems (items) {
   return {
     type: 'LOAD_ITEMS',
     items: items

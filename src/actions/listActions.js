@@ -1,27 +1,40 @@
-export function add (id) {
+export function loadList (list) {
   return {
-    type: 'ADD_ITEM',
-    id
+    type: 'LOAD_LIST',
+    list
   }
 }
 
-export function remove (id) {
+export function add (item) {
   return {
-    type: 'REMOVE_ITEM',
-    id
+    type: 'ADD_ITEM_TO_LIST',
+    item
   }
 }
 
-export function moveUp (id) {
+export function remove (index) {
+  return {
+    type: 'REMOVE_ITEM_FROM_LIST',
+    index
+  }
+}
+
+export function moveUp (index) {
   return {
     type: 'MOVE_ITEM_UP',
-    id
+    index
   }
 }
 
-export function moveDown (id) {
+export function moveDown (index) {
   return {
     type: 'MOVE_ITEM_DOWN',
-    id
+    index
+  }
+}
+
+export function clear () {
+  return {
+    type: 'CLEAR_LIST'
   }
 }

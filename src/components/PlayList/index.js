@@ -14,6 +14,11 @@ class PlayList extends Component {
 
   componentDidMount() {
     this.updateTransform(this.props);
+    document.body.classList.add("playing");
+  }
+
+  componentWillUnmount() {
+    document.body.classList.remove("playing");
   }
 
   updateTransform (props) {

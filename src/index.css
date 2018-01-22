@@ -45,5 +45,52 @@ html {
 body {
   font-family: sans-serif;
   font-size: 16px;
-  overflow: hidden
+}
+
+body.playing {
+  overflow: hidden;
+}
+
+.tile-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tile-grid__item {
+  position: relative;
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+  margin-left: 20px;
+  background-size: cover;
+}
+
+.tile-grid__item-name {
+  position: absolute;
+  padding: 5px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+}
+
+.tile-grid__item-button {
+  position: absolute;
+  top: 5px;
+}
+
+.tile-grid__item-button--prev {
+  left: 5px
+}
+
+.tile-grid__item-button--next {
+  left: 30px
+}
+
+.tile-grid__item-button--close {
+  right: 5px
 }

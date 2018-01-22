@@ -1,3 +1,9 @@
+export function loadItemsToPlay () {
+  return {
+    type: 'LOAD_ITEMS_TO_PLAY'
+  }
+}
+
 export function nextItem () {
   return {
     type: 'NEXT_ITEM'
